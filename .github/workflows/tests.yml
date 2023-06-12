@@ -1,9 +1,9 @@
 ---
-name: Testa ansible execution
+name: Test actions ubuntu capabilities
 on: [push]
 jobs:
     test-automation:
-        name: Test working automation applications
+        name: Test working applications
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
@@ -11,11 +11,7 @@ jobs:
             - name: Test ansible
               run: ansible --version
             - name: Test terraform
-              run: terraform --version 
-    test-capabilities:
-        name: Test another capabilities
-        runs-on: ubuntu-latest
-        steps:
+              run: terraform --version
             - name: Checkout
               uses: actions/checkout@v3
             - name: Check installed packages
@@ -29,3 +25,6 @@ jobs:
                 ls -la
             - name: Check mount points information
               run: df -Th
+            - name: Check Tree on folder
+              run: tree /home/runner/work/
+            
