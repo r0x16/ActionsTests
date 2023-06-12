@@ -12,8 +12,6 @@ jobs:
               run: ansible --version
             - name: Test terraform
               run: terraform --version
-            - name: Checkout
-              uses: actions/checkout@v3
             - name: Check installed packages
               run: dpkg -l
             - name: Check environment variables
