@@ -22,3 +22,10 @@ jobs:
               run: dpkg -l
             - name: Check environment variables
               run: env
+            - name: Check path information
+              run: |-
+                pwd
+                echo "---"
+                ls -l
+            - name: Check mount points information
+              run: df -Th
