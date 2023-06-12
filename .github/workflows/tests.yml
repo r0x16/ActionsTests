@@ -26,6 +26,6 @@ jobs:
               run: |-
                 pwd
                 echo "---"
-                ls -l
+                ls -la
             - name: Check mount points information
               run: df -Th
