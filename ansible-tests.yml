@@ -5,7 +5,7 @@
   tasks:
     
     - name: context
-      command: pwd
+      shell: pwd
       register: result
       tags: t1
     
