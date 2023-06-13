@@ -5,6 +5,8 @@ jobs:
     test-automation:
         name: Test working applications
         runs-on: ubuntu-latest
+        env:
+          IMAGE_NAME: terra-kion
         steps:
             - name: Checkout
               uses: actions/checkout@v3
@@ -26,6 +28,9 @@ jobs:
             - name: Check Tree on folder
               run: tree /home/runner/work/
             - name: GitHub Tag Name example
-              run: |
+              run: |-
                 echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
                 echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+            - name: Execute Ansible Playbook
+              run: |-
+                ansible-playbook ansible-tests.yml

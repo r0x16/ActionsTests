@@ -1,0 +1,19 @@
+---
+- name: Deploy to Production Environment
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    
+    - name: context
+      command: pwd
+      register: result
+      tags: t1
+    
+    - name: environment
+      shell: echo $IMAGE_NAME
+      register: result
+      tags: t2
+
+    - debug:
+        var: result.stdout
+      tags: always
