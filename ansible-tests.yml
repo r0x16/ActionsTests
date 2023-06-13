@@ -6,14 +6,8 @@
     
     - name: context
       shell: pwd
-      register: result
-      tags: t1
+      debugger: always
     
     - name: environment
       shell: echo $IMAGE_NAME
-      register: result
-      tags: t2
-
-    - debug:
-        var: result.stdout
-      tags: always
+      debugger: always
