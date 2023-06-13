@@ -6,8 +6,12 @@
     
     - name: context
       shell: pwd
-      debugger: always
+      register: context
+    
+    - debug: var=context.stdout
     
     - name: environment
       shell: echo $IMAGE_NAME
-      debugger: always
+      register: environment
+    
+    - debug: var=environment.stdout
